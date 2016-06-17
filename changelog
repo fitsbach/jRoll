@@ -1,6 +1,9 @@
 # Changelog
 jQuery plugin that generates animated spinners.
 
+##### 0.1.3
+Added new animations `wave`
+
 ##### 0.1.2
 Tweaked `heartbeat` animation
 Added new animations `halfslicedspinner`

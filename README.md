@@ -1,4 +1,5 @@
 # jRoll
+### Version 0.1.3
 jQuery plugin that generates animated spinners.
 
 ##Call jRoll
@@ -24,6 +25,7 @@ pulse
 slicedspinner
 halfslicedspinner
 gyroscope
+wave
 ```
 
 ##Example

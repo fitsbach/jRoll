@@ -1,6 +1,6 @@
 //
 //jRoll - http://fitsbachinteractive.com/jroll
-//Version - 0.1.2
+//Version - 0.1.3
 //Licensed unter the GNU General Public License - gnu.org/licenses/gpl.html
 //
 //Copyright (c) 2016 Jimmy Fitzback
@@ -111,6 +111,27 @@
 				var midBall= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" style="z-index:-2;" > <defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" style="stop-color:'+settings.colors[1]+'; stop-opacity:1" /><stop offset="100%" style="stop-color:'+settings.colors[0]+';stop-opacity:1" /></radialGradient></defs><circle cx="'+settings.radius+'" cy="'+settings.radius+'" r="'+(settings.radius/2)+'"  fill="url(#grad1)"></circle></svg>');
 				
 				$(this).append(inRing).append(outRing).append(midBall);
+				break;
+			
+			case 'wave':
+				//Parent CSS 
+				$(this).css("width", settings.radius*2+'px').css("height",settings.radius*2+'px').css("overflow","hidden");
+				
+				//Waves CSS
+				var Wave1Style = "animation: waveOut 1.5s linear 0s infinite;";
+				var Wave2Style = "animation: waveMid 1.5s linear 0s infinite;";
+				var Wave3Style = "animation: waveIn 1.5s linear 0s infinite;";
+				var WaveCenterStyle = "animation: waveCenter 1.5s linear 0s infinite;";
+				
+				//Rings Sizes
+				var strokew = settings.radius/12;
+				
+				var Wave1= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" style="'+Wave1Style+'"><circle cx="'+settings.radius+'" cy="'+(settings.radius*2)+'" r="'+(settings.radius-6)+'" stroke="'+settings.colors[0]+'" stroke-width="'+strokew+'" fill="transparent"></circle></svg>');
+				var Wave2= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" style="'+Wave2Style+'"><circle cx="'+settings.radius+'" cy="'+(settings.radius*2)+'" r="'+(settings.radius-12)+'" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="transparent"></circle></svg>');
+				var Wave3= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" style="'+Wave3Style+'"><circle cx="'+settings.radius+'" cy="'+(settings.radius*2)+'" r="'+(settings.radius-18)+'" stroke="'+settings.colors[2]+'" stroke-width="'+strokew+'" fill="transparent"></circle></svg>');
+				var WaveCenter= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" style="'+WaveCenterStyle+'"><circle cx="'+settings.radius+'" cy="'+(settings.radius*2)+'" r="'+(settings.radius-30)+'" stroke="'+settings.colors[2]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"></circle></svg>');
+				
+				$(this).append(Wave1).append(Wave2).append(Wave3).append(WaveCenter);
 				break;
     
 				
