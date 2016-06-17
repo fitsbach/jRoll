@@ -1,0 +1,18 @@
+# Changelog
+jQuery plugin that generates animated spinners.
+
+##### 0.1.2
+Tweaked `heartbeat` animation
+Added new animations `halfslicedspinner`
+Added new animations `gyroscope`
+Cleaned JS.
+
+##### 0.1.1
+Added new animation `slicedspinner`
+Cleaned CSS and JS.
+
+### 0.1
+jRoll published with 3 available options: `radius` `animation` and `colors`.
+`radius` option takes integers and interpretes it at pixels
+Available animations are `pulse` and `heartbeat`.
+`colors` takes an array of colors. At the moment, putting more than 3 colors in the array is pointless.

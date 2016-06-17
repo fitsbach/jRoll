@@ -12,7 +12,9 @@
 	<body style="background-color:rgb(30, 30, 30)">
 		<div id="heartbeat"></div>
 		<div id="pulse"></div>
-		<div id="spinner"></div>
+		<div id="slicedspinner"></div>
+		<div id="halfslicedspinner"></div>
+		<div id="gyroscope"></div>
         
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
         <script type="text/javascript" src="jRoll.js"></script>
@@ -26,9 +28,17 @@
                     radius: 48,
 					animation: "pulse"
                 });
-				$("#spinner").jRoll({
+				$("#slicedspinner").jRoll({
                     radius: 48,
 					animation: "slicedspinner"
+                });
+				$("#halfslicedspinner").jRoll({
+                    radius: 48,
+					animation: "halfslicedspinner"
+                });
+				$("#gyroscope").jRoll({
+                    radius: 48,
+					animation: "gyroscope"
                 });
             });	
 		</script>
