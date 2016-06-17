@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>jRoll</title>
+		<link rel="stylesheet" href="jRoll.css">
+		<style>
+		
+		
+		</style>
+	</head>
+
+	<body style="background-color:rgb(30, 30, 30)">
+		<div id="heartbeat"></div>
+		<div id="pulse"></div>
+        
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+        <script type="text/javascript" src="jRoll.js"></script>
+        <script>
+            $( document ).ready(function() {
+                $("#heartbeat").jRoll({
+                    radius: 70,
+					animation: "heartbeat"
+                });
+				$("#pulse").jRoll({
+                    radius: 70,
+					animation: "pulse"
+                });
+            });	
+		</script>
+		
+	</body>
+
+</html>
