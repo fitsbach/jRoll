@@ -22,6 +22,8 @@ colors //Colors must be an array of hex colors, see example below
 heartbeat
 pulse
 slicedspinner
+halfslicedspinner
+gyroscope
 ```
 
 ##Example
