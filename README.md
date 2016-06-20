@@ -1,6 +1,6 @@
 # jRoll
 ### Version 0.1.4
-jQuery plugin that generates animated spinners.
+###### _Generate beautiful spinners for your Web Site/App_
 
 ##Call jRoll
 To call jRoll you first have to have a designated `<div>` where to put the spinner.
