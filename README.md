@@ -1,5 +1,5 @@
 # jRoll
-### Version 0.1.3
+### Version 0.1.4
 jQuery plugin that generates animated spinners.
 
 ##Call jRoll
@@ -26,6 +26,14 @@ slicedspinner
 halfslicedspinner
 gyroscope
 wave
+jumpdots
+hordots
+verdots
+spreaddots
+trailedspreaddots
+circledots
+squares
+3Dsquares
 ```
 
 ##Example
@@ -34,6 +42,6 @@ wave
 $("#myDiv").jRoll({
         radius: 70, 
 		animation: "heartbeat",
-		colors:['#046476','#29DCFF','#61FFD5']
+		colors:['#003056','#04518C','#00A1D9','#47D9BF','#F2D03B']
 });
 ```
