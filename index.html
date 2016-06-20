@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jRoll</title>
+		<link rel="stylesheet" href="css/jRoll.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,400">
+
+		<style>
+		
+		
+		</style>
+	<!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+		font-family: 'Roboto', regular;
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div id="spinnercontainer" style="position:absolute;margin-top:-35px;">
+			<div id="spinner"></div>
+		</div>
+    <!-- Page Content -->
+    <div class="container" style="margin-top:221px;">
+		
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 style="font-family: 'Roboto', thin;font-weight:200;font-size:72px;">jRoll</h1>
+                <p class="lead">Spinners made easy</p>
+                <hr>
+            </div>
+			<div class="col-lg-4 col-lg-offset-4">
+				<select class="form-control col-lg-4" id="select" style="font-size-adjust:1;height:50px;">
+					<option value="heartbeat">Heartbeat</option>
+					<option value="pulse">Pulse</option>
+					<option value="slicedspinner">slicedspinner</option>
+					<option value="halfslicedspinner">halfslicedspinner</option>
+					<option value="gyroscope">gyroscope</option>
+					<option value="wave">wave</option>
+					<option value="jumpdots">jumpdots</option>
+					<option value="hordots">hordots</option>
+					<option value="verdots">verdots</option>
+					<option value="spreaddots">spreaddots</option>
+					<option value="trailedspreaddots">trailedspreaddots</option>
+					<option value="circledots">circledots</option>
+					<option value="squares">squares</option>
+					<option value="3Dsquares">3Dsquares</option>
+				</select>
+			</div>
+        </div>
+        <!-- /.row -->
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
+				<div class="btn-group btn-group-justified">
+					<a href="#" class="btn btn-default" onclick=changeTheme(1)>Theme 1</a>
+					<a href="#" class="btn btn-default" onclick=changeTheme(2)>Theme 2</a>
+					<a href="#" class="btn btn-default" onclick=changeTheme(3)>Theme 3</a>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- /.container -->
+
+
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jRoll.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script>
+		var animrad = 128;
+            $( document ).ready(function() {
+				$('#spinnercontainer').css("left","calc(50% - "+animrad+"px)")
+				$("#spinner").jRoll({
+                    radius: animrad,
+					animation: $('#select').val()
+                });
+            });	
+			$('#select').on('change', function() {
+				$('#spinner').empty();
+				$('#spinner').attr("style", "");
+				$("#spinner").jRoll({
+                    radius: animrad,
+					animation: this.value
+                });
+			});
+			function changeTheme(themeid){
+			var colorarray = [];
+				switch(themeid){
+					case 1:
+						colorarray = ['#003056','#04518C','#00A1D9','#47D9BF','#F2D03B'];
+						break;
+					case 2:
+						colorarray = ['#FFBC67','#DA727E','#AC6C82','#685C79','#455C7B'];
+						break;
+					case 3:
+						colorarray = ['#2F400D','#8CBF26','#A8CA65','#E8E5B0','#419184'];
+						break;
+				}
+				$('#spinner').remove();
+				var spinnerdiv = $('<div>', {id: 'spinner'});
+				$('#spinnercontainer').append(spinnerdiv);
+				$("#spinner").jRoll({
+                    radius: animrad,
+					animation: $('#select').val(),
+					colors: colorarray
+                });
+			}
+		</script>
+		
+	</body>
+
+</html>
