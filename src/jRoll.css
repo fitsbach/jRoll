@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-/*!jRoll - http://fitsbachinteractive.com/jroll
- *Version - 0.1.4
+/*!jRoll - https://fitsbach.github.io/jRoll/
+ *Version - 0.1.5
  *Licensed unter the GNU General Public License - gnu.org/licenses/gpl.html
  *
  *Copyright (c) 2016 Jimmy Fitzback
@@ -268,6 +268,37 @@
 	0%{transform:rotateZ(0deg);}
 	50%{transform:rotateZ(0deg);}
 	100%{transform:rotateZ(90deg);}
+}
+@keyframes stackedsquare{
+  0%{transform: perspective(500px)rotateX(70deg)rotateZ(-45deg)translateZ(150px);opacity:0;}
+  25%{transform: perspective(500px)rotateX(70deg)rotateZ(-45deg)translateZ(0px);opacity:1;}
+  50%{transform: perspective(500px)rotateX(70deg)rotateZ(-45deg)translateZ(-10px);opacity:1;}
+  75%{transform: perspective(500px)rotateX(70deg)rotateZ(-45deg)translateZ(-20px);opacity:0;}
+  100%{transform: perspective(500px)rotateX(70deg)rotateZ(-45deg)translateZ(-30px);opacity:0;}
+}
+@keyframes suspensionpointcircle{
+	0%{transform:scale(0.2,0.2);stroke-width:20;}
+	20%{transform:scale(0.4,0.4);stroke-width:2;}
+	40%{transform:scale(0.4,0.4);stroke-width:20;}
+	60%{stroke-width:2;}
+	80%{transform:scale(0.4,0.4);stroke-width:20;}
+	100%{transform:scale(0.2,0.2);stroke-width:2;}
+}
+@keyframes suspensionpoint{
+	0%{transform:translateX(0%);}
+	20%{transform:translateX(0%);}
+	40%{transform:translateX(150%);}
+	60%{transform:translateX(150%);}
+	80%{transform:translateX(300%);}
+	100%{transform:translateX(300%);}
+}
+@keyframes popdot{
+	0%{opacity:0;transform:scale(0.5,0.5);stroke-width:2;}
+	30%{opacity:0;transform:scale(0.2,0.2);stroke-width:140;}
+	57%{opacity:1;stroke-width:140;transform:scale(0.5,0.5);}
+	60%{opacity:1;stroke-width:40;transform:scale(0.5,0.5);}
+	90%{opacity:1;stroke-width:2;transform:scale(1,1);}
+	100%{transform:scale(0.5,0.5);opacity:0;stroke-width:2;}
 }
 svg{
 	position:absolute;
