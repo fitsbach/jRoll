@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>jRoll</title>
+		<title>jRoll - Spinners made easy</title>
 		<link rel="stylesheet" href="examples/jRoll.css">
 		<link rel="stylesheet" href="examples/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css"
@@ -46,21 +46,32 @@
                 <hr>
             </div>
 			<div class="col-lg-4 col-lg-offset-4">
-				<select class="form-control col-lg-4" id="select" style="font-size-adjust:1;height:50px;">
+				<select class="form-control col-lg-4" id="select" style="font-size-adjust:0.5;height:50px;">
+				<optgroup label="Circles">
 					<option value="heartbeat">Heartbeat</option>
 					<option value="pulse">Pulse</option>
 					<option value="slicedspinner">slicedspinner</option>
 					<option value="halfslicedspinner">halfslicedspinner</option>
 					<option value="gyroscope">gyroscope</option>
-					<option value="wave" selected>wave</option>
+				</optgroup>
+				<optgroup label="Misc.Shapes">
+					<option selected value="wave">wave</option>
+				</optgroup>
+				<optgroup label="Dots">
 					<option value="jumpdots">jumpdots</option>
 					<option value="hordots">hordots</option>
 					<option value="verdots">verdots</option>
 					<option value="spreaddots">spreaddots</option>
 					<option value="trailedspreaddots">trailedspreaddots</option>
 					<option value="circledots">circledots</option>
+					<option value="3dots">3dots</option>
+					<option value="popdot">popdot</option>
+				</optgroup>
+				<optgroup label="Squares">
 					<option value="squares">squares</option>
 					<option value="3Dsquares">3Dsquares</option>
+					<option value="stackedsquares">stackedsquares</option>
+				</optgroup>
 				</select>
 			</div>
         </div>
@@ -86,11 +97,11 @@
         <script type="text/javascript" src="examples/jRoll.js"></script>
 		<script type="text/javascript" src="examples/bootstrap.min.js"></script>
         <script>
-		var animrad = 128;
+		var jrollradius = 128;
             $( document ).ready(function() {
-				$('#spinnercontainer').css("left","calc(50% - "+animrad+"px)")
+				$('#spinnercontainer').css("left","calc(50% - "+jrollradius+"px)")
 				$("#spinner").jRoll({
-                    radius: animrad,
+                    radius: jrollradius,
 					animation: $('#select').val()
                 });
             });	
@@ -98,7 +109,7 @@
 				$('#spinner').empty();
 				$('#spinner').attr("style", "");
 				$("#spinner").jRoll({
-                    radius: animrad,
+                    radius: jrollradius,
 					animation: this.value
                 });
 			});
@@ -106,20 +117,20 @@
 			var colorarray = [];
 				switch(themeid){
 					case 1:
-						colorarray = ['#003056','#04518C','#00A1D9','#47D9BF','#F2D03B'];
-						break;
-					case 2:
 						colorarray = ['#FFBC67','#DA727E','#AC6C82','#685C79','#455C7B'];
 						break;
-					case 3:
+					case 2:
 						colorarray = ['#2F400D','#8CBF26','#A8CA65','#E8E5B0','#419184'];
+						break;
+					case 3:
+						colorarray = ['#394165','#2B2937','#65669E','#3E4361','#00BE9C'];
 						break;
 				}
 				$('#spinner').remove();
 				var spinnerdiv = $('<div>', {id: 'spinner'});
 				$('#spinnercontainer').append(spinnerdiv);
 				$("#spinner").jRoll({
-                    radius: animrad,
+                    radius: jrollradius,
 					animation: $('#select').val(),
 					colors: colorarray
                 });
