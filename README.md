@@ -1,6 +1,6 @@
 # jRoll
-### Version 0.1.4
-###### _Generate beautiful spinners for your Web Site/App_
+### Version 0.1.5
+jQuery plugin that generates animated spinners.
 
 ##Call jRoll
 To call jRoll you first have to have a designated `<div>` where to put the spinner.
@@ -11,11 +11,12 @@ $("#myDiv").jRoll();
 
 ##Options
 
-You currently have only 3 options to use with jRoll:
+You currently have 4 options to use with jRoll:
 ```
 radius //Currently interpreted as pixels by jRoll
 animation //See animation list below
 colors //Colors must be an array of hex colors, see example below
+monocolor //Animation will load only the first color of the array
 ```
 
 ## Animation List
@@ -34,6 +35,9 @@ trailedspreaddots
 circledots
 squares
 3Dsquares
+stackedsquares
+3dots
+popdot
 ```
 
 ##Example
