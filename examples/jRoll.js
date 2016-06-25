@@ -1,6 +1,6 @@
 //
-//jRoll - http://fitsbachinteractive.com/jroll
-//Version - 0.1.4
+//jRoll - https://fitsbach.github.io/jRoll/
+//Version - 0.1.5
 //Licensed unter the GNU General Public License - gnu.org/licenses/gpl.html
 //
 //Copyright (c) 2016 Jimmy Fitzback
@@ -14,32 +14,38 @@
         var settings = $.extend({
             radius: 100,
             animation: "heartbeat",
-			colors: ['#004358','#1F8A70','#BEDB39','#FFE11A','#FD7400']
+			colors: ['#003056','#04518C','#00A1D9','#47D9BF','#F2D03B'],
+			monocolor: false
         }, options );
 		
 		//Fill the colors array if it's not full(3 colors)
 		switch(settings.colors.length){
 			case 0:
-				settings.colors = ['#004358','#1F8A70','#BEDB39','#FFE11A','#FD7400'];
+				settings.colors = ['#003056','#04518C','#00A1D9','#47D9BF','#F2D03B'];
 				break;
 			case 1:
-				settings.colors[1]='#1F8A70';
-				settings.colors[2]='#BEDB39';
+				settings.colors[1]='#04518C';
+				settings.colors[2]='#00A1D9';
 				break;
 			case 2:
-				settings.colors[2]='#BEDB39';
-				settings.colors[3]='#FFE11A';
-				settings.colors[4]='#FD7400';
+				settings.colors[2]='#00A1D9';
+				settings.colors[3]='#47D9BF';
+				settings.colors[4]='#F2D03B';
 				break;
 			case 3:
-				settings.colors[3]='#FFE11A';
-				settings.colors[4]='#FD7400';
+				settings.colors[3]='#47D9BF';
+				settings.colors[4]='#F2D03B';
 				break;
 			case 4:
-				settings.colors[4]='#FD7400';
+				settings.colors[4]='#F2D03B';
 				break;
 		}
-		
+		if(settings.monocolor==true){
+			settings.colors[1]=settings.colors[0];
+			settings.colors[2]=settings.colors[0];
+			settings.colors[3]=settings.colors[0];
+			settings.colors[4]=settings.colors[0];
+		}
         switch(settings.animation){
 			case 'heartbeat':
 			//Parent CSS 
@@ -169,6 +175,35 @@
 				var Dot5= $('<svg height="'+((settings.radius/6)+1)+'" width="'+((settings.radius/6)+1)+'" style="'+Dot5Style+'"><circle cx="50%" cy="50%" r="'+(settings.radius/12)+'" fill="'+settings.colors[4]+'"></circle></svg>');
 				
 				$(this).append(Dot1).append(Dot2).append(Dot3).append(Dot4).append(Dot5);
+				break;
+				
+			case '3dots':
+				//Parent CSS 
+				$(this).css("width", settings.radius*2+'px').css("height",settings.radius*2+'px').css("overflow","hidden");
+				
+				//Waves CSS
+				var Dot1Style = "animation: suspensionpoint 3s linear -2s infinite;margin-left:calc(50% - "+(((settings.radius/4)/2)*4)+"px);margin-top: calc(50% - "+(((settings.radius/4)/2))+"px);";
+				var Dot2Style = "animation: suspensionpoint 3s linear -1s infinite;margin-left:calc(50% - "+(((settings.radius/4)/2)*4)+"px);margin-top: calc(50% - "+(((settings.radius/4)/2))+"px);";
+				var Dot3Style = "animation: suspensionpoint 3s linear 0s infinite;margin-left:calc(50% - "+(((settings.radius/4)/2)*4)+"px);margin-top: calc(50% - "+(((settings.radius/4)/2))+"px);";
+				
+								
+				var Dot1= $('<svg height="'+((settings.radius/4))+'" width="'+((settings.radius/4))+'" style="'+Dot1Style+'"><circle style="transform-origin: '+(settings.radius/8)+'px '+(settings.radius/8)+'px; animation: suspensionpointcircle 3s linear -2s infinite" cx="50%" cy="50%" r="'+(settings.radius/8)+'" fill="rgba(0,0,0,0)" stroke="'+settings.colors[3]+'"></circle></svg>');
+				var Dot2= $('<svg height="'+((settings.radius/4))+'" width="'+((settings.radius/4))+'" style="'+Dot2Style+'"><circle style="transform-origin: '+(settings.radius/8)+'px '+(settings.radius/8)+'px; animation: suspensionpointcircle 3s linear -1s infinite" cx="50%" cy="50%" r="'+(settings.radius/8)+'" fill="rgba(0,0,0,0)" stroke="'+settings.colors[2]+'"></circle></svg>');
+				var Dot3= $('<svg height="'+((settings.radius/4))+'" width="'+((settings.radius/4))+'" style="'+Dot3Style+'"><circle style="transform-origin: '+(settings.radius/8)+'px '+(settings.radius/8)+'px; animation: suspensionpointcircle 3s linear 0s infinite" cx="50%" cy="50%" r="'+(settings.radius/8)+'" fill="rgba(0,0,0,0)" stroke="'+settings.colors[1]+'"></circle></svg>');
+				
+				$(this).append(Dot1).append(Dot2).append(Dot3);
+				break;
+				
+			case 'popdot':
+				//Parent CSS 
+				$(this).css("width", settings.radius*2+'px').css("height",settings.radius*2+'px').css("overflow","hidden");
+				
+				//Waves CSS
+				//var Dot1Style = "animation: popdot 3s linear -2s infinite;margin-left:calc(50% - "+(((settings.radius/4)/2)*4)+"px);margin-top: calc(50% - "+(((settings.radius/4)/2))+"px);";
+								
+				var Dot1= $('<svg height="'+((settings.radius*2))+'" width="'+((settings.radius*2))+'"><circle style="transform-origin: '+settings.radius+'px '+settings.radius+'px; animation: popdot 1.5s linear 0s infinite" cx="50%" cy="50%" r="'+(settings.radius/2)+'" fill="rgba(0,0,0,0)" stroke="'+settings.colors[0]+'"></circle></svg>');
+				
+				$(this).append(Dot1);
 				break;
 			
 			case 'hordots':
@@ -371,6 +406,23 @@
 				$('#jRoll3DSquareFace1').append(Dot1).append(Dot2).append(Dot3).append(Dot4).append(DotCenter).append(Dot6).append(Dot7).append(Dot8).append(Dot9);
 				$('#jRoll3DSquareFace2').append(Dot13D).append(Dot23D).append(Dot33D).append(Dot43D).append(DotCenter3D).append(Dot63D).append(Dot73D).append(Dot83D).append(Dot93D);
 				break;
+				
+			case 'stackedsquares':
+			
+				//Parent CSS 
+				$(this).css("width", settings.radius*2+'px').css("height",settings.radius*2+'px').css("overflow","hidden");
+				
+				//Waves CSS
+				var Sq1Style = "animation: stackedsquare 1.5s linear 0s infinite;transform: perspective(500px)rotateX(90deg)rotateZ(-45deg)translateZ(0px);position:absolute;opacity:0;left:25%;";
+				var Sq2Style = "animation: stackedsquare 1.5s linear 0.5s infinite;transform: perspective(500px)rotateX(90deg)rotateZ(-45deg)translateZ(-50px);position:absolute;opacity:0;left:25%;";
+				var Sq3Style = "animation: stackedsquare 1.5s linear 1s infinite;transform: perspective(500px)rotateX(90deg)rotateZ(-45deg)translateZ(-100px);position:absolute;opacity:0;left:25%;";
+				
+				var Sq1= $('<svg height="'+((settings.radius))+'" width="'+((settings.radius))+'" style="'+Sq1Style+'"><rect width="'+((settings.radius))+'" height="'+((settings.radius))+'" style="fill:'+settings.colors[2]+';" /></svg>');
+				var Sq2= $('<svg height="'+((settings.radius))+'" width="'+((settings.radius))+'" style="'+Sq2Style+'"><rect width="'+((settings.radius))+'" height="'+((settings.radius))+'" style="fill:'+settings.colors[1]+';" /></svg>');
+				var Sq3= $('<svg height="'+((settings.radius))+'" width="'+((settings.radius))+'" style="'+Sq3Style+'"><rect width="'+((settings.radius))+'" height="'+((settings.radius))+'" style="fill:'+settings.colors[0]+';" /></svg>');
+				$(this).append(Sq1).append(Sq2).append(Sq3);
+				break;
+				
 		}
                 
     }
