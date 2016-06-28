@@ -1,6 +1,6 @@
 //
 //jRoll - https://fitsbach.github.io/jRoll/
-//Version - 0.1.5
+//Version - 0.1.6
 //Licensed unter the GNU General Public License - gnu.org/licenses/gpl.html
 //
 //Copyright (c) 2016 Jimmy Fitzback
@@ -421,6 +421,49 @@
 				var Sq2= $('<svg height="'+((settings.radius))+'" width="'+((settings.radius))+'" style="'+Sq2Style+'"><rect width="'+((settings.radius))+'" height="'+((settings.radius))+'" style="fill:'+settings.colors[1]+';" /></svg>');
 				var Sq3= $('<svg height="'+((settings.radius))+'" width="'+((settings.radius))+'" style="'+Sq3Style+'"><rect width="'+((settings.radius))+'" height="'+((settings.radius))+'" style="fill:'+settings.colors[0]+';" /></svg>');
 				$(this).append(Sq1).append(Sq2).append(Sq3);
+				break;
+				
+			case 'waterdrop':
+			
+				//Parent CSS 
+				$(this).css("width", settings.radius*2+'px').css("height",settings.radius*2+'px').css("overflow","hidden");
+				
+				//Waves CSS
+				var waterdropStyle = "animation: waterdropdrop 1.5s linear 0s infinite;";
+				var waterwaveStyle = "transform:perspective(500px)rotateX(50deg)scale(1,1);animation: waterdropwave 3s linear 0s infinite;";
+				var waterwaveStyleIn = "transform:perspective(500px)rotateX(50deg)scale(1,1);animation: waterdropwaveIn 3s linear 0s infinite;";
+				var waterwaveStyle2 = "transform:perspective(500px)rotateX(50deg)scale(1,1);opacity:0;animation: waterdropwave 3s linear 1.5s infinite;";
+				var waterwaveStyle2In = "transform:perspective(500px)rotateX(50deg)scale(1,1);opacity:0;animation: waterdropwaveIn 3s linear 1.5s infinite;";
+				
+				
+				var waterdrop= $('<svg height="'+((settings.radius)/4)+'" width="'+((settings.radius)*2)+'" viewBox="518.234 280.146 200 200" style="'+waterdropStyle+'"><path fill="'+settings.colors[0]+'" stroke="'+settings.colors[3]+'" stroke-width="10" stroke-miterlimit="10" d="M618.235,468.333c-37.982,0-45.104-29.489-45.104-29.489c-10.739-48.237,45.29-145.826,45.29-145.826s54.219,93.03,45.29,145.826C663.712,438.844,656.217,468.333,618.235,468.333z"/></svg>');
+				var outRing= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" id="jRollOutRing" style="'+waterwaveStyle+'"><circle cx="'+settings.radius+'" cy="'+settings.radius+'" r="'+((settings.radius/2)-0)+'" stroke="'+settings.colors[2]+'" stroke-width="2" fill="transparent"></circle></svg>');
+				var InRing= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" id="jRollInRing" style="'+waterwaveStyleIn+'"><circle cx="'+settings.radius+'" cy="'+settings.radius+'" r="'+((settings.radius/4)-0)+'" stroke="'+settings.colors[2]+'" stroke-width="1" fill="transparent"></circle></svg>');
+				var outRing2= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" id="jRollOutRing" style="'+waterwaveStyle2+'"><circle cx="'+settings.radius+'" cy="'+settings.radius+'" r="'+((settings.radius/2)-0)+'" stroke="'+settings.colors[2]+'" stroke-width="2" fill="transparent"></circle></svg>');
+				var InRing2= $('<svg height="'+(settings.radius*2)+'" width="'+(settings.radius*2)+'" id="jRollInRing" style="'+waterwaveStyle2In+'"><circle cx="'+settings.radius+'" cy="'+settings.radius+'" r="'+((settings.radius/4)-0)+'" stroke="'+settings.colors[2]+'" stroke-width="1" fill="transparent"></circle></svg>');
+				
+				$(this).append(waterdrop).append(outRing).append(InRing).append(outRing2).append(InRing2);
+				break;
+				
+			case 'eq':
+			
+				//Parent CSS 
+				$(this).css("width", settings.radius*2+'px').css("height",settings.radius*2+'px').css("overflow","hidden");
+				
+				//Waves CSS
+				var bar1Style = "animation: eq 2s linear -1s infinite;margin-left:calc(50% - "+(((settings.radius)/12)*2.5)+"px);top:calc(50% - "+((settings.radius)/4)+"px );";
+				var bar2Style = "animation: eq 2s linear 0s infinite;margin-left:calc(50% - "+(((settings.radius)/12)*1.25)+"px);top:calc(50% - "+((settings.radius)/4)+"px );";
+				var bar3Style = "animation: eq 2s linear -0.8s infinite;margin-left:50%;top:calc(50% - "+((settings.radius)/4)+"px );";
+				var bar4Style = "animation: eq 2s linear -1.2s infinite;margin-left:calc(50% + "+(((settings.radius)/12)*1.25)+"px);top:calc(50% - "+((settings.radius)/4)+"px );";
+				var bar5Style = "animation: eq 2s linear -0.4s infinite;margin-left:calc(50% + "+(((settings.radius)/12)*2.5)+"px);top:calc(50% - "+((settings.radius)/4)+"px );";
+				
+				var bar1= $('<svg height="'+((settings.radius)/2)+'" width="'+((settings.radius)*2)+'" style="'+bar1Style+'"><rect x="0" y="0" rx="4" ry="4" width="'+((settings.radius)/12)+'" height="'+((settings.radius)/2)+'" style="fill:'+settings.colors[3]+';opacity:0.5" /></svg>');
+				var bar2= $('<svg height="'+((settings.radius)/2)+'" width="'+((settings.radius)*2)+'" style="'+bar2Style+'"><rect x="0" y="0" rx="4" ry="4" width="'+((settings.radius)/12)+'" height="'+((settings.radius)/2)+'" style="fill:'+settings.colors[1]+';opacity:0.5" /></svg>');
+				var bar3= $('<svg height="'+((settings.radius)/2)+'" width="'+((settings.radius)*2)+'" style="'+bar3Style+'"><rect x="0" y="0" rx="4" ry="4" width="'+((settings.radius)/12)+'" height="'+((settings.radius)/2)+'" style="fill:'+settings.colors[0]+';opacity:0.5" /></svg>');
+				var bar4= $('<svg height="'+((settings.radius)/2)+'" width="'+((settings.radius)*2)+'" style="'+bar4Style+'"><rect x="0" y="0" rx="4" ry="4" width="'+((settings.radius)/12)+'" height="'+((settings.radius)/2)+'" style="fill:'+settings.colors[2]+';opacity:0.5" /></svg>');
+				var bar5= $('<svg height="'+((settings.radius)/2)+'" width="'+((settings.radius)*2)+'" style="'+bar5Style+'"><rect x="0" y="0" rx="4" ry="4" width="'+((settings.radius)/12)+'" height="'+((settings.radius)/2)+'" style="fill:'+settings.colors[4]+';opacity:0.5" /></svg>');
+			
+				$(this).append(bar1).append(bar2).append(bar3).append(bar4).append(bar5);
 				break;
 				
 		}
