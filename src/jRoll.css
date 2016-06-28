@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*!jRoll - https://fitsbach.github.io/jRoll/
- *Version - 0.1.5
+ *Version - 0.1.6
  *Licensed unter the GNU General Public License - gnu.org/licenses/gpl.html
  *
  *Copyright (c) 2016 Jimmy Fitzback
@@ -299,6 +299,37 @@
 	60%{opacity:1;stroke-width:40;transform:scale(0.5,0.5);}
 	90%{opacity:1;stroke-width:2;transform:scale(1,1);}
 	100%{transform:scale(0.5,0.5);opacity:0;stroke-width:2;}
+}
+@keyframes waterdropdrop{
+	0%{opacity:0;transform:scale(2,0.2)translateY(0%);}
+	20%{opacity:1;transform:scale(1,1)translateY(20%);}
+	40%{opacity:0.01;}
+	50%{opacity:0;transform:scale(1.5,0.1)translateY(1200%);}
+	60%{opacity:0;transform:scale(0.5,0.1)translateY(1500%);}
+	100%{opacity:0;transform:scale(1,0.2)translateY(1000%);}
+}
+@keyframes waterdropwave{
+	0%{opacity:0;}
+	15%{opacity:0;transform:rotateX(50deg)scale(0.5,0.5)translateY(0%);}
+	50%{opacity:1;transform:rotateX(50deg)scale(1,1)translateY(0%);}
+	90%{opacity:0;transform:rotateX(50deg)scale(2,2)translateY(0%);}
+	100%{opacity:0;}
+}
+@keyframes waterdropwaveIn{
+	0%{opacity:0;}
+	15%{opacity:0;transform:rotateX(50deg)scale(0.5,0.5)translateY(0%);}
+	50%{opacity:1;transform:rotateX(50deg)scale(1,1)translateY(0%);}
+	90%{opacity:0;transform:rotateX(50deg)scale(3,3)translateY(0%);}
+	100%{opacity:0;}
+}
+@keyframes eq{
+	0%{transform:scale(1,1);}
+	15%{transform:scale(1,1.2);}
+	25%{transform:scale(1,0.7);}
+	50%{transform:scale(1,1.5);}
+	70%{transform:scale(1,1.1);}
+	90%{transform:scale(1,0.8);}
+	100%{transform:scale(1,1);}
 }
 svg{
 	position:absolute;
