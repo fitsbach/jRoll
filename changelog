@@ -1,6 +1,10 @@
 # Changelog
 jQuery plugin that generates animated spinners.
 
+##### 0.1.6
+Added new misc. shaped spinners/animations:
+	-eq
+	-waterdrop
 ##### 0.1.5
 Added new option:
 	-monocolor

@@ -1,5 +1,5 @@
 # jRoll
-### Version 0.1.5
+### Version 0.1.6
 jQuery plugin that generates animated spinners.
 
 ##Call jRoll
@@ -38,6 +38,8 @@ squares
 stackedsquares
 3dots
 popdot
+eq
+waterdrop
 ```
 
 ##Example
