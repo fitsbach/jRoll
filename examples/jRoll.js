@@ -449,7 +449,7 @@
 			
 			case 'OctoX':
 				//Parent CSS 
-				$(this).css("width", settings.radius+'px').css("height",settings.radius+'px').css("overflow","hidden");
+				$(this).css("width", settings.radius*2+'px').css("height",settings.radius*2+'px').css("overflow","hidden");
 				
 				//Waves CSS
 				var strokew= 2;
