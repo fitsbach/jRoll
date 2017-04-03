@@ -425,7 +425,7 @@
 			
 			case 'pentahex':
 				//Parent CSS 
-				$(this).css("width", settings.radius+'px').css("height",settings.radius+'px').css("overflow","hidden");
+				$(this).css("width", settings.radius+'px').css("height",settings.radius+'px').css("overflow","hidden").css("left","64px");
 				
 				//Waves CSS
 				var strokew= 2;
