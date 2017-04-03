@@ -422,6 +422,29 @@
 				var Sq3= $('<svg height="'+((settings.radius))+'" width="'+((settings.radius))+'" style="'+Sq3Style+'"><rect width="'+((settings.radius))+'" height="'+((settings.radius))+'" style="fill:'+settings.colors[0]+';" /></svg>');
 				$(this).append(Sq1).append(Sq2).append(Sq3);
 				break;
+			
+			case 'pentahex':
+				//Parent CSS 
+				$(this).css("width", settings.radius+'px').css("height",settings.radius+'px').css("overflow","hidden");
+				
+				//Waves CSS
+				var strokew= 2;
+				var RadiusThird = settings.radius / 3;
+				
+				var Penta1Style = "opacity:0.25; animation: pentahex 1s linear 0s infinite;";
+				var Penta2Style = "opacity:0.25; animation: pentahex2 1s linear 0s infinite;";
+				var Penta3Style = "opacity:0.25; animation: pentahex3 1s linear 0s infinite;";
+				var Penta4Style = "opacity:0.25; animation: pentahex4 1s linear 0s infinite;";
+				
+				var PentaHexSVG= '<svg height="'+settings.radius+'" width="'+settings.radius+'"> \
+				<path style="'+Penta1Style+'" d="M0 0 L'+settings.radius+' 0 L'+RadiusThird*2+' '+RadiusThird+' L'+RadiusThird+' '+RadiusThird+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				<path style="'+Penta2Style+'" d="M'+settings.radius+' 0 L'+RadiusThird*2+' '+RadiusThird+' L'+RadiusThird*2+' '+RadiusThird*2+' L'+settings.radius+' '+settings.radius+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				<path style="'+Penta3Style+'" d="M'+settings.radius+' '+settings.radius+' L'+RadiusThird*2+' '+RadiusThird*2+' L'+RadiusThird+' '+RadiusThird*2+' L0 '+settings.radius+' Z"  stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				<path style="'+Penta4Style+'" d="M0 '+settings.radius+' L'+RadiusThird+' '+RadiusThird*2+' L'+RadiusThird+' '+RadiusThird+' L0 0 Z"  stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				</svg>';
+
+				$(this).append(PentaHexSVG);
+				break;
 				
 			case 'waterdrop':
 			
