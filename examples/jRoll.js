@@ -425,7 +425,7 @@
 			
 			case 'pentahex':
 				//Parent CSS 
-				$(this).css("width", settings.radius+'px').css("height",settings.radius+'px').css("overflow","hidden").css("left","64px");
+				$(this).css("width", settings.radius+'px').css("height",settings.radius+'px').css("overflow","hidden");
 				
 				//Waves CSS
 				var strokew= 2;
@@ -436,7 +436,7 @@
 				var Penta3Style = "opacity:0.25; animation: pentahex3 1s linear 0s infinite;";
 				var Penta4Style = "opacity:0.25; animation: pentahex4 1s linear 0s infinite;";
 				
-				var PentaHexSVG= '<svg height="'+settings.radius+'" width="'+settings.radius+'"> \
+				var PentaHexSVG= '<svg height="'+settings.radius+'" width="'+settings.radius+'" style="left:64px;"> \
 				<path style="'+Penta1Style+'" d="M0 0 L'+settings.radius+' 0 L'+RadiusThird*2+' '+RadiusThird+' L'+RadiusThird+' '+RadiusThird+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
 				<path style="'+Penta2Style+'" d="M'+settings.radius+' 0 L'+RadiusThird*2+' '+RadiusThird+' L'+RadiusThird*2+' '+RadiusThird*2+' L'+settings.radius+' '+settings.radius+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
 				<path style="'+Penta3Style+'" d="M'+settings.radius+' '+settings.radius+' L'+RadiusThird*2+' '+RadiusThird*2+' L'+RadiusThird+' '+RadiusThird*2+' L0 '+settings.radius+' Z"  stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
