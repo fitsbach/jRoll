@@ -365,6 +365,17 @@
 	84%{opacity:0.25;}
 	96%{opacity:1;}
 }
+@keyframes OctoX{
+	0%{transform: scale(0.75,0.75);}
+	25%{transform: scale(1,1);}
+	50%{transform: scale(0.75,0.75);}
+}
+@keyframes OctoXContainer{
+	0%{transform: rotate(0deg);}
+	50%{transform: rotate(0deg);}
+	75%{transform: rotate(90deg);}
+	100%{transform: rotate(90deg);}
+}
 svg{
 	position:absolute;
 }
