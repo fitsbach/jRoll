@@ -446,7 +446,41 @@
 
 				$(this).append(PentaHexSVG);
 				break;
+			
+			case 'OctoX':
+				//Parent CSS 
+				$(this).css("width", settings.radius+'px').css("height",settings.radius+'px').css("overflow","hidden");
 				
+				//Waves CSS
+				var strokew= 2;
+				var RadiusEighth = settings.radius / 8;
+				
+				var ContainerStyle = "transform-origin: 50% 50%; animation: OctoXContainer 1s linear 0s infinite;";
+				
+				var PentaTopStyle = "transform-origin: 50% 0%; transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				var PentaRightStyle = "transform-origin: 100% 50%;  transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				var PentaBottomStyle = "transform-origin: 50% 100%; transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				var PentaLeftStyle = "    transform-origin: 0% 50%; transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				
+				var SquareTopRightStyle = "transform-origin: 100% 0%; transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				var SquareBottomRightStyle = "transform-origin: 100% 100%; transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				var SquareBottomLeftStyle = "transform-origin: 0% 100%; transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				var SquareTopLeftStyle = "transform-origin: 0% 0%;  transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
+				
+				var OctoXVG= '<svg style="'+ContainerStyle+'" height="'+settings.radius+'" width="'+settings.radius+'"> \
+				<path style="'+PentaTopStyle+'" d="M'+RadiusEighth+' 0 L'+RadiusEighth*7+' 0 L'+RadiusEighth*5+' '+RadiusEighth*2+' L'+RadiusEighth*3+' '+RadiusEighth*2+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				<path style="'+SquareTopRightStyle+'" d="M'+RadiusEighth*7+' 0 L'+settings.radius+' '+RadiusEighth+' L'+RadiusEighth*6+' '+RadiusEighth*3+' L'+RadiusEighth*5+' '+RadiusEighth*2+' Z" stroke="'+settings.colors[2]+'" stroke-width="'+strokew+'" fill="'+settings.colors[1]+'"/> \
+				<path style="'+PentaRightStyle+'" d="M'+settings.radius+' '+RadiusEighth+' L'+RadiusEighth*6+' '+RadiusEighth*3+' L'+RadiusEighth*6+' '+RadiusEighth*5+' L'+settings.radius+' '+RadiusEighth*7+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				<path style="'+SquareBottomRightStyle+'" d="M'+RadiusEighth*8+' '+RadiusEighth*7+' L'+RadiusEighth*7+' '+RadiusEighth*8+' L'+RadiusEighth*5+' '+RadiusEighth*6+' L'+RadiusEighth*6+' '+RadiusEighth*5+' Z" stroke="'+settings.colors[2]+'" stroke-width="'+strokew+'" fill="'+settings.colors[1]+'"/> \
+				<path style="'+PentaBottomStyle+'" d="M'+RadiusEighth*7+' '+RadiusEighth*8+' L'+RadiusEighth*5+' '+RadiusEighth*6+' L'+RadiusEighth*3+' '+RadiusEighth*6+' L'+RadiusEighth+' '+RadiusEighth*8+'Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				<path style="'+SquareBottomLeftStyle+'" d="M'+RadiusEighth*1+' '+RadiusEighth*8+' L0 '+RadiusEighth*7+' L'+RadiusEighth*2+' '+RadiusEighth*5+' L'+RadiusEighth*3+' '+RadiusEighth*6+' Z" stroke="'+settings.colors[2]+'" stroke-width="'+strokew+'" fill="'+settings.colors[1]+'"/> \
+				<path style="'+PentaLeftStyle+'" d="M0 '+RadiusEighth*7+' L0 '+RadiusEighth+' L'+RadiusEighth*2+' '+RadiusEighth*3+' L'+RadiusEighth*2+' '+RadiusEighth*5+'Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
+				<path style="'+SquareTopLeftStyle+'" d="M0 '+RadiusEighth*1+' L'+RadiusEighth*1+' 0 L'+RadiusEighth*3+' '+RadiusEighth*2+' L'+RadiusEighth*2+' '+RadiusEighth*3+' Z" stroke="'+settings.colors[2]+'" stroke-width="'+strokew+'" fill="'+settings.colors[1]+'"/> \
+				</svg>';
+
+				$(this).append(OctoXVG);
+				break;
+			
 			case 'waterdrop':
 			
 				//Parent CSS 
