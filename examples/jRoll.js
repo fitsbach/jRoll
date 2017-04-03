@@ -467,7 +467,7 @@
 				var SquareBottomLeftStyle = "transform-origin: 0% 100%; transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
 				var SquareTopLeftStyle = "transform-origin: 0% 0%;  transform:scale(0.75,0.75); animation: OctoX 1s linear 0s infinite;";
 				
-				var OctoXVG= '<svg style="'+ContainerStyle+'" height="'+settings.radius+'" width="'+settings.radius+'"> \
+				var OctoXVG= '<svg style="'+ContainerStyle+'" height="'+settings.radius+'" width="'+settings.radius+'" style="left:64px;"> \
 				<path style="'+PentaTopStyle+'" d="M'+RadiusEighth+' 0 L'+RadiusEighth*7+' 0 L'+RadiusEighth*5+' '+RadiusEighth*2+' L'+RadiusEighth*3+' '+RadiusEighth*2+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
 				<path style="'+SquareTopRightStyle+'" d="M'+RadiusEighth*7+' 0 L'+settings.radius+' '+RadiusEighth+' L'+RadiusEighth*6+' '+RadiusEighth*3+' L'+RadiusEighth*5+' '+RadiusEighth*2+' Z" stroke="'+settings.colors[2]+'" stroke-width="'+strokew+'" fill="'+settings.colors[1]+'"/> \
 				<path style="'+PentaRightStyle+'" d="M'+settings.radius+' '+RadiusEighth+' L'+RadiusEighth*6+' '+RadiusEighth*3+' L'+RadiusEighth*6+' '+RadiusEighth*5+' L'+settings.radius+' '+RadiusEighth*7+' Z" stroke="'+settings.colors[1]+'" stroke-width="'+strokew+'" fill="'+settings.colors[0]+'"/> \
